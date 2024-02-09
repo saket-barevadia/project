@@ -1,0 +1,15 @@
+C:\HalloDoc\Business_Logic\bin\Debug\net7.0\Business_Logic.deps.json
+C:\HalloDoc\Business_Logic\bin\Debug\net7.0\Business_Logic.dll
+C:\HalloDoc\Business_Logic\bin\Debug\net7.0\Business_Logic.pdb
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.AssemblyInfoInputs.cache
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.AssemblyInfo.cs
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.csproj.CoreCompileInputs.cache
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.dll
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\refint\Business_Logic.dll
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.pdb
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\ref\Business_Logic.dll
+C:\HalloDoc\Business_Logic\bin\Debug\net7.0\Data_Layer.dll
+C:\HalloDoc\Business_Logic\bin\Debug\net7.0\Data_Layer.pdb
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.csproj.AssemblyReference.cache
+C:\HalloDoc\Business_Logic\obj\Debug\net7.0\Business_Logic.csproj.CopyComplete
