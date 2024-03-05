@@ -1,11 +1,16 @@
 ﻿using Business_Logic.Interface;
 using Data_Layer.DataContext;
 using Data_Layer.DataModels;
+using Data_Layer.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Business_Logic.LogicRepositories
 {
@@ -18,7 +23,21 @@ namespace Business_Logic.LogicRepositories
             _db = db;
         }
 
-        public void patientReq(User obj)
+        public int UserExist(string email)
+        {
+            var exist = _db.Aspnetusers.FirstOrDefault(u => u.Email == email);
+            if (exist == null)
+            {
+                return 402;
+            }
+            else
+            {
+                return 401;
+            }
+
+        }
+
+        public void patientReq(PatientRequestCm obj)
         {
             Request request = new Request();
             Requestclient requestclient = new Requestclient();
@@ -30,52 +49,103 @@ namespace Business_Logic.LogicRepositories
              
             var asp=_db.Aspnetusers.FirstOrDefault(x=>x.Email==obj.Email);
 
+             
+
+            if (data == null)
+            {
+                if (obj.PasswordHash == obj.ConfirmPasswordHash)
+                {
+                    aspnetuser.Username = obj.Email.Substring(0, obj.Email.IndexOf("@"));
+                    aspnetuser.Email = obj.Email;
+                    aspnetuser.Phonenumber = obj.Phone;
+                    aspnetuser.Passwordhash = obj.PasswordHash;
+                    aspnetuser.Createddate = DateTime.Now;
+                    _db.Aspnetusers.Add(aspnetuser);
+                    _db.SaveChanges();
+                }
+            }
+
             if (data != null)
             {
 
                 if (user == null)
                 {
-                    obj.Aspnetuserid = asp.Id;
-                    obj.Createdby = data.Id;
-                    obj.Createddate = DateTime.Now;
-                    _db.Users.Add(obj);
+                    var userTb=new User();
+                    userTb.Aspnetuserid = asp.Id;
+                    userTb.Createdby = data.Id;
+                    userTb.Createddate = DateTime.Now;
+                    userTb.Firstname = obj.FirstName;
+                    userTb.Lastname = obj.LastName;
+                    userTb.Email = obj.Email;
+                    userTb.Mobile = obj.Phone;
+                    userTb.Street = obj.Street;
+                    userTb.City = obj.City;
+                    userTb.State = obj.State;
+                    userTb.Zipcode = obj.Zipcode;
+                    userTb.Strmonth=obj.Strmonth.Substring(5, 2);
+                    userTb.Intdate= Convert.ToInt16(obj.Strmonth.Substring(8, 2));
+                    userTb.Intyear = Convert.ToInt16(obj.Strmonth.Substring(0, 4));
+                    _db.Users.Add(userTb);
                     _db.SaveChanges();
                 }
 
-                //aspnetuser.Username = obj.Firstname;
-                //aspnetuser.Email = obj.Email;
-                //aspnetuser.Phonenumber = obj.Mobile;
-                //aspnetuser.Ip = obj.Ip;
-                //aspnetuser.Createddate = DateTime.Now;
-                //_db.Aspnetusers.Add(aspnetuser);
-                //_db.SaveChanges();
 
+
+  
                 request.Requesttypeid = 1;
                 request.Userid = _db.Users.FirstOrDefault(x => x.Email == obj.Email).Userid;
-                request.Firstname = obj.Firstname;
-                request.Lastname = obj.Lastname;
-                request.Phonenumber = obj.Mobile;
+                request.Firstname = obj.FirstName;
+                request.Lastname = obj.LastName;
+                request.Phonenumber = obj.Phone;
                 request.Email = obj.Email;
-                request.Status = 1;
                 request.Createddate = DateTime.Now;
-                request.Ip = obj.Ip;
+                request.Confirmationnumber = obj.FirstName.Substring(0, 2) + DateTime.Now.ToString().Substring(0, 19).Replace(" ", "");
+                
+             
+                //request.Ip = obj.Ip;
                 _db.Requests.Add(request);
                 _db.SaveChanges();
 
 
-
+                
                 requestclient.Requestid = request.Requestid;
-                requestclient.Firstname = obj.Firstname;
-                requestclient.Lastname = obj.Lastname;
+                requestclient.Firstname = obj.FirstName;
+                requestclient.Lastname = obj.LastName;
                 requestclient.Email = obj.Email;
                 requestclient.Street = obj.Street;
+                requestclient.Phonenumber = obj.Phone;
                 requestclient.City = obj.City;
                 requestclient.State = obj.State;
                 requestclient.Zipcode = obj.Zipcode;
-                requestclient.Ip = obj.Ip;
+                requestclient.Strmonth= obj.Strmonth.Substring(5, 2);
+                requestclient.Intdate= Convert.ToInt16(obj.Strmonth.Substring(8, 2));
+                requestclient.Intyear = Convert.ToInt16(obj.Strmonth.Substring(0, 4));
+                requestclient.Notes = obj.Symptons;
+                //requestclient.Ip = obj.Ip;
                 _db.Requestclients.Add(requestclient);
                 _db.SaveChanges();
 
+
+                string filename = obj.Upload.FileName;
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Documents", filename);
+                IFormFile file = obj.Upload;
+
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(fileStream);
+                }
+
+               // Request? req = _db.Requests.FirstOrDefault(i => i.Email == obj.Email);
+               // int ReqId = req.Requestid;
+
+                var data3 = new Requestwisefile()
+                {
+                    Requestid = request.Requestid,
+                    Filename = filename,
+                };
+
+                _db.Requestwisefiles.Add(data3);
+                _db.SaveChanges();
 
 
 
@@ -83,8 +153,9 @@ namespace Business_Logic.LogicRepositories
 
 
 
-
         }
 
+
+        
     }
 }

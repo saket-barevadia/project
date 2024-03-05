@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ILnCMsR2IdzjfR+yDsyXIVsFsYaR/KAoUsNimEhW4OgCfbsc/Ipx3kNMwiNP2m38uzLL4V7GWUUiviFpsaBgrA==",
+  "dgSpecHash": "Pb+DAbXQkFD2ROQ3mZVdbHiM5MrIYHfkH9q2yCak2V1S1kaaPQcRF0UfxTHvWgFs5fJ9LZ9XXv0F3uj8FVSGRQ==",
   "success": true,
   "projectFilePath": "C:\\HalloDoc\\Data_Layer\\Data_Layer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pca21\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\pca21\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.32\\microsoft.aspnetcore.http.features.3.1.32.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.15\\microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.15\\microsoft.entityframeworkcore.abstractions.7.0.15.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.15\\microsoft.entityframeworkcore.analyzers.7.0.15.nupkg.sha512",
@@ -25,6 +26,7 @@
     "C:\\Users\\pca21\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\pca21\\.nuget\\packages\\system.io.pipelines\\4.7.5\\system.io.pipelines.4.7.5.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

@@ -18,10 +18,13 @@ public partial class Aspnetuser
     public string? Username { get; set; }
 
     [Column("passwordhash", TypeName = "character varying")]
+    [Required(ErrorMessage = "Please Enter Password")]
+
     public string? Passwordhash { get; set; }
 
     [Column("email")]
     [StringLength(256)]
+    [Required(ErrorMessage ="Please Enter Your Email")]
     public string Email { get; set; } = null!;
 
     [Column("phonenumber", TypeName = "character varying")]

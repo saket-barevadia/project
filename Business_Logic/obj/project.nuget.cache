@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L0wz9x2Dn0rwx1zjZegeHEnlV658V5l/LWIh/UFPSaqoMaJxC75DJgpWnTTUamGOPPPGzq+whM/ZMct+op8p9A==",
+  "dgSpecHash": "iU3lXm0Ut35w80ZwxV0avUp6C8dsFgB3qErAAsqOjJwQhDOkwWbUYLdc+700EpOdaE2uoQP2+F/7K34zy3vt7A==",
   "success": true,
   "projectFilePath": "C:\\HalloDoc\\Business_Logic\\Business_Logic.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pca21\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.32\\microsoft.aspnetcore.http.features.3.1.32.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.15\\microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.15\\microsoft.entityframeworkcore.abstractions.7.0.15.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.15\\microsoft.entityframeworkcore.analyzers.7.0.15.nupkg.sha512",
@@ -18,7 +19,8 @@
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\pca21\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
-    "C:\\Users\\pca21\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512"
+    "C:\\Users\\pca21\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
+    "C:\\Users\\pca21\\.nuget\\packages\\system.io.pipelines\\4.7.5\\system.io.pipelines.4.7.5.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using Data_Layer.DataModels;
+using Data_Layer.CustomModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace Business_Logic.Interface
 {
     public interface IPatientReq
     {
-        public void patientReq(User obj);
+        public void patientReq(PatientRequestCm obj);
+
+
+        public int UserExist(string email);
     }
 }
